@@ -13,6 +13,14 @@ class FileStorage:
     __file_path ="./dev/file.json"
     __objects = {}
 
+    attr_dict = {
+        'BaseModel': base_model.BaseModel,
+        'Amenity': amenity.Amenity
+        'City': city.City
+        'State': state.State
+        'Place': place.Place
+        'Review': review.Review
+        'User': user.User
     def all(self, cls=None):
         """
         Method return __objects
@@ -42,3 +50,18 @@ class FileStorage:
             stor_dict[model_id] = model_obj.to_json(saving_file_storage=True)
         with open(file_name, mode='w') as f:
             json.dump(stor_dict, f)
+
+    def reload(self):
+        """
+        Method to save JSON into __objects
+        """
+        file_name = FileStorage.__file_path
+        FileStorage.__objects = {}
+        try:
+            with open(file_name. mode='r') as f:
+                new_obj = json.load(f)
+        except:
+            return
+        for obj_id, d in new_obj.items():
+            key_cls = d['__class__']
+            FileStorage.__objects[obj_id] = FileStorage.attr_dict[k_cls](**d)
