@@ -5,12 +5,11 @@ File storage class
 """
 
 
-
 class FileStorage:
     """
     Handle storage of files for all classes
     """
-    __file_path ="./dev/file.json"
+    __file_path = "./dev/file.json"
     __objects = {}
 
     attr_dict = {
@@ -21,6 +20,8 @@ class FileStorage:
         'Place': place.Place
         'Review': review.Review
         'User': user.User
+    }
+
     def all(self, cls=None):
         """
         Method return __objects
