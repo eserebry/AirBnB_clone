@@ -12,34 +12,18 @@ class FileStorage:
     __file_path = "./dev/file.json"
     __objects = {}
 
-    attr_dict = {
-        'BaseModel': base_model.BaseModel,
-        'Amenity': amenity.Amenity
-        'City': city.City
-        'State': state.State
-        'Place': place.Place
-        'Review': review.Review
-        'User': user.User
-    }
-
-    def all(self, cls=None):
+    def all(self):
         """
-        Method return __objects
+        Method return all instances of obj
         """
-        if cls is not None:
-            new_obj = {}
-            for cls_id, obj, in FileStorage.__objects.items():
-                if type(obj).__name__ = obj
-            return new_obj
-        else:
-            return FileStorage.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """
         Method sets obj in dictionary with id as key
         """
-        model_id = "{}.{}".format(type(obj).__name__, obj.id)
-        FileStorage.__objects[model_id] = obj
+        model_id_key = "{}.{}".format(type(obj).__name__, obj.id)
+        FileStorage.__objects[model_id_key] = obj
 
     def save(self):
         """
