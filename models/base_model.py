@@ -11,7 +11,7 @@ class BaseModel:
         """ Initialise class BaseMode
         Args:
             id (str): uuid
-            created_at (int): datetimr
+            created_at (int): datetime
             updated_at (int): datetime
         """
         self.id = str(uuid.uuid4())
@@ -24,10 +24,12 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of __dict__"""
-        return {'__class__': self.__class__.__name__,
-                'created_at': self.created_at,
-                'id': self.id,
-                'updated_at': self.updated_at}
+        my_dict = self.__dict__
+        my_dict['__class__'] = self.__class__.__name__
+        my_dict['created_at'] = self.created_at
+        my_dict['id'] = self.id
+        my_dict['updated_at'] = self.updated_at
+        return my_dict
 
     def __str__(self):
         """returns string with the BaseModel arguments"""
