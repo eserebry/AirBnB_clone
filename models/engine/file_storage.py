@@ -43,7 +43,7 @@ class FileStorage:
         file_name = FileStorage.__file_path
         FileStorage.__objects = {}
         try:
-            with open(file_name. mode='r') as f:
+            with open(file_name, mode='r') as f:
                 new_obj = json.load(f)
         except:
             return
