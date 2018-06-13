@@ -39,6 +39,15 @@ class HBNBCommand(cmd.Cmd):
         """
         pass
 
+    @classmethod
+    def get_instanceCount(self, classname=" "):
+        obj = storage.all()
+        counter = 0
+        for keys in obj.keys():
+            obj_class = (obj[keys].__class__.__name__)
+            if (obj_class == classname):
+                counter += 1
+
     def check_class(cls):
         """
         Method helper to identify cls is valid
