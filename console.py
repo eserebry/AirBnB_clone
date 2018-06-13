@@ -33,6 +33,12 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
+    def emptyline(self):
+        """
+        Nothing happened if empty line passed (ENTER pressed)
+        """
+        pass
+
     def check_class(cls):
         """
         Method helper to identify cls is valid
