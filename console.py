@@ -69,8 +69,8 @@ class HBNBCommand(cmd.Cmd):
             if args[0] is None:
                 print("** class name missing**")
             else:
-                valid_cls = check_class(args[0])
-                if valid_cls is not None:
+                valid_class = check_class(args[0])
+                if valid_class is not None:
                     instance = valid_class()
                     instance.save()
                     print(instance.id)

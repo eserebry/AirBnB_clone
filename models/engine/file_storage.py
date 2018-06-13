@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import os.path
 import json
 """
 File storage class
@@ -9,7 +10,7 @@ class FileStorage:
     """
     Handle storage of files for all classes
     """
-    __file_path = "./dev/file.json"
+    __file_path = './file.json'
     __objects = {}
 
     def all(self):
@@ -22,31 +23,46 @@ class FileStorage:
         """
         Method sets obj in dictionary with id as key
         """
-        model_id_key = "{}.{}".format(type(obj).__name__, obj.id)
-        FileStorage.__objects[model_id_key] = obj
+        model_id_key = str(obj.__class__.__name__) + '.' + str(obj.id)
+        self.__objects[model_id_key] = obj
 
     def save(self):
         """
         Method to save __objects to JSON
         """
-        file_name = FileStorage.__file_path
         stor_dict = {}
-        for model_id, model_obj in FileStorage.__objects.items():
-            stor_dict[model_id] = model_obj.to_json(saving_file_storage=True)
-        with open(file_name, mode='w') as f:
+        for i, obj in self.__objects.items():
+            stor_dict[i] = obj.to_dict()
+        with open(self.__file_path, 'w+') as f:
             json.dump(stor_dict, f)
 
     def reload(self):
-        """
-        Method to save JSON into __objects
-        """
-        file_name = FileStorage.__file_path
-        FileStorage.__objects = {}
-        try:
-            with open(file_name, mode='r') as f:
-                new_obj = json.load(f)
-        except:
-            return
-        for obj_id, d in new_obj.items():
-            key_cls = d['__class__']
-            FileStorage.__objects[obj_id] = FileStorage.attr_dict[k_cls](**d)
+        """method: reload - deserialize"""
+        if os.path.exists(self.__file_path):
+            with open(self.__file_path, 'r') as f:
+                read = json.load(f)
+            from models.base_model import BaseModel
+            from models.user import User
+            from models.state import State
+            from models.city import City
+            from models.place import Place
+            from models.amenity import Amenity
+            from models.review import Review
+            for i in read.keys():
+                if read[i]["__class__"] == "BaseModel":
+                    self.__objects[i] = BaseModel(**read[i])
+                elif read[i]["__class__"] == "User":
+                    self.__objects[i] = User(**read[i])
+                elif read[i]["__class__"] == "State":
+                    self.__objects[i] = State(**read[i])
+                elif read[i]["__class__"] == "City":
+                    self.__objects[i] = City(**read[i])
+                elif read[i]["__class__"] == "Place":
+                    self.__objects[i] = Place(**read[i])
+                elif read[i]["__class__"] == "Amenity":
+                    self.__objects[i] = Amenity(**read[i])
+                elif read[i]["__class__"] == "Review":
+                    self.__objects[i] = Review(**read[i])
+            return self.__objects
+        else:
+            return {}
