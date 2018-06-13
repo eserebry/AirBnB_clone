@@ -21,9 +21,6 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = ' (hbnb) '
 
-    if __name__ == '__main__':
-        HBNBCommand().cmdloop()
-
     def do_EOF(self, line):
         """
         Method to exit with EOF command
@@ -118,7 +115,9 @@ class HBNBCommand(cmd.Cmd):
                 valid_class = check_class(args[0])
                 if valid_class is not None:
                     obj = storage.all()
-                    key = str(args[0]) + '.' str(args[1])
+                    print("-----{}".format(args[0]))
+                    print("-----{}".format(args[1]))
+                    #key = str(args[0]) + '.' str(args[1])
                     try:
                         del obj[key]
                         storage.save()
@@ -141,15 +140,15 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             for key in obj.keys():
                 obj_class = (obj[k].__class__.__name__)
-                if obj_class == args[0]):
+                if obj_class == args[0]:
                     print(obj[k])
-                    counter++
+                    counter+=1
             if counter == 0 and valid_class is not None:
                 print([])
         except:
             for key in obj.keys():
                 print(obj[key])
-                counter++
+                counter+=1
             if counter == 0:
                 print([])
 
@@ -339,3 +338,7 @@ class HBNBCommand(cmd.Cmd):
             rtrn = build_updatearg(line[8:-1])
             argument = "Review" + " " + rtrn
             self.do_update(argument)
+
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
