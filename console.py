@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
     """
     Class HBNBCommand processor
     """
-    prompt = ' (hbnb) '
+    prompt = '(hbnb) '
 
     def do_EOF(self, line):
         """
@@ -142,13 +142,13 @@ class HBNBCommand(cmd.Cmd):
                 obj_class = (obj[k].__class__.__name__)
                 if obj_class == args[0]:
                     print(obj[k])
-                    counter+=1
+                    counter += 1
             if counter == 0 and valid_class is not None:
                 print([])
         except:
             for key in obj.keys():
                 print(obj[key])
-                counter+=1
+                counter += 1
             if counter == 0:
                 print([])
 
