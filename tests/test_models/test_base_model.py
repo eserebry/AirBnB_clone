@@ -11,6 +11,9 @@ class TestBaseModel(unittest.TestCase):
         """instance setup"""
         self.basemodel = BaseModel()
 
+    def test_init(self):
+        self.assertTrue(isinstance(self.base12, BaseModel))
+
     def testattr(self):
         """Testing the attributes of BaseModel"""
         self.assertTrue(hasattr(self.basemodel, "created_at"))
