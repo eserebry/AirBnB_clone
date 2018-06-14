@@ -320,10 +320,12 @@ class HBNBCommand(cmd.Cmd):
             argument = "Review" + " " + rtrn
             self.do_update(argument)
 
+
 def check_class(classname):
     """
     Method validate classname
     """
+
     classes = {'BaseModel': BaseModel, 'State': State, 'City': City,
                'User': User, 'Amenity': Amenity, 'Review': Review,
                'Place': Place}
@@ -333,10 +335,12 @@ def check_class(classname):
     else:
         return None
 
+
 def create_updatestr(line):
         """
         Method create string for update method using class name
         """
+
         args = line.split()
         args0 = args[0].replace('"', "")
         tmp = args0.replace(',', "")
