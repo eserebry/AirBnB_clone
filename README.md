@@ -19,7 +19,7 @@ The repository contains the following files:
 |   **File**   |   **Description**   |
 | -------------- | --------------------- |
 |console.py | Command interpreter |
-|file_storage.py | Instansens are being serialised to a JSON-string and deserialised back           |
+|file_storage.py | Instansens are being serialised to a JSON-string and deserialised back |
 |base_model.py | Defines all common attributes/methods for other classes |
 |amenity.py | A class Amenity that inherits from BaseModel |
 |city.py | A class City that inherits from BaseModel |
