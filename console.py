@@ -56,11 +56,11 @@ class HBNBCommand(cmd.Cmd):
         if not line:
             print("** class name missing **")
         else:
-            args = line.split()
-            if args[0] is None:
+            arguments = line.split()
+            if arguments[0] is None:
                 print("** class name missing**")
             else:
-                valid_class = check_class(args[0])
+                valid_class = check_class(arguments[0])
                 if valid_class is not None:
                     instance = valid_class()
                     instance.save()
@@ -75,18 +75,18 @@ class HBNBCommand(cmd.Cmd):
         if not line:
             print("** class name missing **")
         else:
-            args = line.split()
-            if not args[0]:
+            arguments = line.split()
+            if not arguments[0]:
                 print("** class name missing **")
             try:
-                args[1]
+                arguments[1]
             except Exception:
                 print("** instance id missing **")
             else:
-                valid_class = check_class(args[0])
+                valid_class = check_class(arguments[0])
                 if valid_class is not None:
                     obj = storage.all()
-                    key = str(args[0]) + '.' + str(args[1])
+                    key = str(arguments[0]) + '.' + str(arguments[1])
                     try:
                         print(obj[key])
                     except:
@@ -101,18 +101,18 @@ class HBNBCommand(cmd.Cmd):
         if not line:
             print("** class name missing **")
         else:
-            args = line.split()
-            if not args[0]:
+            arguments = line.split()
+            if not arguments[0]:
                 print("** class name missing **")
             try:
-                args[1]
+                arguments[1]
             except:
                 print("** instance id missing **")
             else:
-                valid_class = check_class(args[0])
+                valid_class = check_class(arguments[0])
                 if valid_class is not None:
                     obj = storage.all()
-                    key = str(args[0]) + '.' + str(args[1])
+                    key = str(arguments[0]) + '.' + str(arguments[1])
                     try:
                         del obj[key]
                         storage.save()
@@ -154,32 +154,32 @@ class HBNBCommand(cmd.Cmd):
         if not line:
             print("** class name missing **")
         else:
-            args = line.split()
-            if not args[0]:
+            arguments = line.split()
+            if not arguments[0]:
                 print("** class name missing **")
             try:
-                args[1]
+                arguments[1]
             except:
                 print("** instance id missing **")
             try:
-                args[2]
+                arguments[2]
             except:
                 print("** attribute name missing **")
             try:
-                args[3]
+                arguments[3]
             except:
                 print("** value missing **")
             else:
-                valid_class = check_class(args[0])
+                valid_class = check_class(arguments[0])
                 if valid_class is not None:
                     obj = storage.all()
-                    key = str(args[0]) + '.' + str(args[1])
+                    key = str(arguments[0]) + '.' + str(arguments[1])
                     try:
-                        if args[3].isdigit():
-                            args[3] = int(args[3])
+                        if arguments[3].isdigit():
+                            arguments[3] = int(arguments[3])
                         else:
-                            args[3] = args[3].replace('"', '')
-                        setattr(obj[key], args[2], args[3])
+                            arguments[3] = arguments[3].replace('"', '')
+                        setattr(obj[key], arguments[2], arguments[3])
                         setattr(obj[key], "updated_at", datetime.now())
                         storage.save()
                     except:
