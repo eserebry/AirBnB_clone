@@ -46,26 +46,8 @@ class HBNBCommand(cmd.Cmd):
         for keys in obj.keys():
             obj_class = (obj[keys].__class__.__name__)
             if (obj_class == classname):
-                counter += 1
-
-    def check_class(cls):
-        """
-        Method helper to identify cls is valid
-        """
-        classes = {
-            'BaseModel': BaseModel,
-            'User': User,
-            'State': State,
-            'City': City,
-            'Amenity': Amenity,
-            'Place': Place,
-            'Review': Review
-        }
-        for key, value in classes.items():
-            if cls == key:
-                return value
-            else:
-                return None
+                counter = counter + 1
+        return counter
 
     def do_create(self, line):
         """
@@ -130,9 +112,7 @@ class HBNBCommand(cmd.Cmd):
                 valid_class = check_class(args[0])
                 if valid_class is not None:
                     obj = storage.all()
-                    print("-----{}".format(args[0]))
-                    print("-----{}".format(args[1]))
-                    #key = str(args[0]) + '.' str(args[1])
+                    key = str(args[0]) + '.' + str(args[1])
                     try:
                         del obj[key]
                         storage.save()
@@ -145,25 +125,25 @@ class HBNBCommand(cmd.Cmd):
         """
         Method print str rep based on class name or not
         """
-        args = line.split()
+        arguments = line.split()
         obj = storage.all()
         counter = 0
         try:
-            args[0]
-            valid_class = check_class(args[0])
+            arguments[0]
+            valid_class = check_class(arguments[0])
             if valid_class is None:
                 print("** class doesn't exist **")
-            for key in obj.keys():
-                obj_class = (obj[k].__class__.__name__)
-                if obj_class == args[0]:
+            for k in obj.keys():
+                obj_cls = (obj[k].__class__.__name__)
+                if (obj_cls == arguments[0]):
                     print(obj[k])
-                    counter += 1
+                    counter = counter + 1
             if counter == 0 and valid_class is not None:
                 print([])
         except:
-            for key in obj.keys():
-                print(obj[key])
-                counter += 1
+            for k in obj.keys():
+                print(obj[k])
+                counter = counter + 1
             if counter == 0:
                 print([])
 
@@ -206,20 +186,6 @@ class HBNBCommand(cmd.Cmd):
                         print("** no instance found **")
                 else:
                     print("** class doesn't exist **")
-
-    def create_updatestr(line):
-        """
-        Method create string for update method using class name
-        """
-        args = line.split()
-        args0 = args[0].replace('"', "")
-        tmp = args0.replace(',', "")
-        attribute = args[1].replace('"', "")
-        attribute = attribute.replace(',', "")
-        value = args[2].replace('"', "")
-        value = value.replace(',', "")
-        returnvalue = tmp + " " + attribute + " " + value
-        return returnvalue
 
     def do_BaseModel(self, line):
         """
@@ -354,6 +320,32 @@ class HBNBCommand(cmd.Cmd):
             argument = "Review" + " " + rtrn
             self.do_update(argument)
 
+def check_class(classname):
+    """
+    Method validate classname
+    """
+    classes = {'BaseModel': BaseModel, 'State': State, 'City': City,
+               'User': User, 'Amenity': Amenity, 'Review': Review,
+               'Place': Place}
+    for key, value in classes.items():
+        if classname == key:
+            return value
+    else:
+        return None
+
+def create_updatestr(line):
+        """
+        Method create string for update method using class name
+        """
+        args = line.split()
+        args0 = args[0].replace('"', "")
+        tmp = args0.replace(',', "")
+        attribute = args[1].replace('"', '')
+        attribute = attribute.replace(',', '')
+        value = args[2].replace('"', '')
+        value = value.replace(',', '')
+        returnvalue = tmp + ' ' + attribute + ' ' + value
+        return returnvalue
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
