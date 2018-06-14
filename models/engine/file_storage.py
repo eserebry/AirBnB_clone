@@ -10,7 +10,7 @@ class FileStorage:
     """
     Handle storage of files for all classes
     """
-    __file_path = './file.json'
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
