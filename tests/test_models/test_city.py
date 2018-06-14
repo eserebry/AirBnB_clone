@@ -9,7 +9,7 @@ class TestCity(unittest.TestCase):
 
     def setUp(self):
         """setup"""
-        self.city = Cmenity()
+        self.city = City()
 
     def test_city(self):
         """testing for a type of the attributes and
