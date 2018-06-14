@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-""" defines all common attributes/methods for other classes """
-"""module: base_model"""
 import uuid
 from datetime import datetime
 import models
-
+""" defines all common attributes/methods for other classes """
+"""module: base_model"""
 
 """
 Base class for all models will contain id, created_at
