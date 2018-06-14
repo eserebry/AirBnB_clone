@@ -27,7 +27,7 @@ The repository contains the following files:
 |review.py | A class Review that inherits from BaseModel |
 |state.py | A class State that inherits from BaseModel |
 |user.py | A class User that inherits from BaseModel |
-|tests\| Containes Unit Tests for the progect |
+|tests\ | Containes Unit Tests for the progect |
 |README.md | readme file |
 |AUTHORS | autor file |
 
