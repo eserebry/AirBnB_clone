@@ -6,6 +6,11 @@ from models.city import City
 
 class TestCity(unittest.TestCase):
     """class TestCity"""
+
+    def setUp(self):
+        """setup"""
+        self.city = Cmenity()
+
     def test_city(self):
         """testing for a type of the attributes and
         if attributes are not empty"""

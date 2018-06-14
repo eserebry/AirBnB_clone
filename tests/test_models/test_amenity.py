@@ -6,6 +6,11 @@ from models.amenity import Amenity
 
 class TestAmenity(unittest.TestCase):
     """class TestAmenity"""
+
+    def setUp(self):
+        """test setup"""
+        self.amenity = Amenity()
+
     def test_amenity(self):
         """testing for a type of the attributes and
         if attributes are not empty"""

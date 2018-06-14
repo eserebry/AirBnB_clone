@@ -6,6 +6,11 @@ from models.state import State
 
 class TestState(unittest.TestCase):
     """class TestState"""
+
+    def setUp(self):
+        """setup"""
+        self.state = State()
+
     def test_state(self):
         """testing for a type of the attributes and
         if attributes are not empty"""

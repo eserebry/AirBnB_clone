@@ -6,6 +6,11 @@ from models.place import Place
 
 class TestPlace(unittest.TestCase):
     """class TestPlace"""
+
+    def setUp(self):
+        """setup"""
+        self.place = Place()
+
     def test_place(self):
         """testing for a type of the attributes and
         if attributes are not empty"""

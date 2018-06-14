@@ -6,6 +6,11 @@ from models.base_model import BaseModel
 
 class TestBaseModel(unittest.TestCase):
     """class TestBAseModel"""
+
+    def setUp(self):
+        """instance setup"""
+        self.basemodel = BaseModel()
+
     def test_class(self):
         """testing for a type of the attributes and
         if attributes are not empty"""

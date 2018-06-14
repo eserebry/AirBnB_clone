@@ -6,6 +6,11 @@ from models.user import User
 
 class TestUser(unittest.TestCase):
     """class TestUser"""
+
+    def setUp(self):
+        """instance setup"""
+        self.user = User()
+
     def test_user(self):
         """testing for a type of the attributes and
         if attributes are not empty"""

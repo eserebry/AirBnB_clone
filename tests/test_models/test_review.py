@@ -6,6 +6,11 @@ from models.review import Review
 
 class TestReview(unittest.TestCase):
     """class TestReview"""
+
+    def setUp(self):
+        """setup"""
+        self.review = Review()
+
     def test_review(self):
         """testing for a type of the attributes and
         if attributes are not empty"""
