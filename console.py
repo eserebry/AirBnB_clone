@@ -202,7 +202,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "BaseModel" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "BaseModel" + " " + rtrn
             self.do_update(argument)
 
@@ -221,7 +221,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "User" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "User" + " " + rtrn
             self.do_update(argument)
 
@@ -240,7 +240,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "City" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "City" + " " + rtrn
             self.do_update(argument)
 
@@ -259,7 +259,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "State" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "State" + " " + rtrn
             self.do_update(argument)
 
@@ -278,7 +278,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "Place" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "Place" + " " + rtrn
             self.do_update(argument)
 
@@ -297,7 +297,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "Amenity" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "Amenity" + " " + rtrn
             self.do_update(argument)
 
@@ -316,7 +316,7 @@ class HBNBCommand(cmd.Cmd):
             argument = "Review" + " " + line[10:-2]
             self.do_destroy(argument)
         elif line[0:7] == '.update':
-            rtrn = build_updatearg(line[8:-1])
+            rtrn = create_updatestr(line[8:-1])
             argument = "Review" + " " + rtrn
             self.do_update(argument)
 
