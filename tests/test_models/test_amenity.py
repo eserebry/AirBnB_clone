@@ -11,7 +11,7 @@ class TestAmenity(unittest.TestCase):
         """test setup"""
         self.amenity = Amenity()
 
-    def testattr(self):
+    def test_attr(self):
         """Testing the attributes of Amenity"""
         self.assertTrue(hasattr(self.amenity, "created_at"))
         self.assertTrue(hasattr(self.amenity, "id"))
@@ -21,7 +21,7 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(self.amenity.__class__.__name__, "Amenity")
         self.assertEqual(self.amenity.name, "")
 
-    def testmethod(self):
+    def test_method(self):
         """Testing the methods of Amenity"""
         self.amenity.save()
         self.assertTrue(hasattr(self.amenity, "updated_at"))
