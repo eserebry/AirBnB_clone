@@ -38,8 +38,8 @@ class BaseModel:
 
     def __str__(self):
         """returns string with the BaseModel arguments"""
-        return ("[{}] ({}) {}".format(str(type(self).__name__),
-                                      self.id, str(self.__dict__)))
+        return ("[{}] ({}) {}".format(self..__class__.__name__,
+                                      self.id, self.__dict__))
 
     def __repr__(self):
         """
