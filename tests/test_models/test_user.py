@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """unittests for User"""
 import unittest
+import datetime
 from models.user import User
 
 

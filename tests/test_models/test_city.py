@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """unittests for City"""
 import unittest
+import datetime
 from models.city import City
 
 

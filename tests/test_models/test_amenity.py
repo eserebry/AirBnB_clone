@@ -15,7 +15,7 @@ class TestAmenity(unittest.TestCase):
         """Testing the attributes of Amenity"""
         self.assertTrue(hasattr(self.amenity, "created_at"))
         self.assertTrue(hasattr(self.amenity, "id"))
-        self.assertFalse(hasattr(self.amenity, "updated_at"))
+        self.assertTrue(hasattr(self.amenity, "updated_at"))
         self.assertFalse(hasattr(self.amenity, "random_attr"))
         self.assertTrue(hasattr(self.amenity, "name"))
         self.assertEqual(self.amenity.__class__.__name__, "Amenity")
@@ -30,14 +30,7 @@ class TestAmenity(unittest.TestCase):
         self.assertIsNotNone(Amenity.__doc__)
 
     def test_strings(self):
-        self.assertEqual(type(self.amen.name), str)
-
-    def teststr(self):
-        """Testing the str format of Amenity"""
-        s = "[{}] ({}) {}".format(self.amenity.__class__.__name__,
-                                  str(self.amenity.id),
-                                  self.amenity.__dict__)
-        self.assertEqual(print(s), print(self.amenity))
+        self.assertEqual(type(self.amenity.name), str)
 
 if __name__ == '__main__':
     unittest.main()
