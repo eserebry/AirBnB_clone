@@ -26,6 +26,12 @@ class TestAmenity(unittest.TestCase):
         self.amenity.save()
         self.assertTrue(hasattr(self.amenity, "updated_at"))
 
+    def test_functions(self):
+        self.assertIsNotNone(Amenity.__doc__)
+
+    def test_strings(self):
+        self.assertEqual(type(self.amen.name), str)
+
     def teststr(self):
         """Testing the str format of Amenity"""
         s = "[{}] ({}) {}".format(self.amenity.__class__.__name__,
