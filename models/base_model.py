@@ -13,12 +13,12 @@ and updated at attributes. Save() and to_json() methods
 
 
 class BaseModel:
-    """
-    Instantiation of class BaseModel
-    """
+    """defines all common attributes/methods for other classes"""
     def __init__(self, *args, **kwargs):
-        """
-        initializing variables
+        """ Initialise class BaseMode
+        Args:
+        *args - not used
+        **kwargs - dictionary, contains arguments
         """
         if kwargs:
             for key, value in kwargs.items():
@@ -32,10 +32,13 @@ class BaseModel:
             self.updated_at = datetime.now()
             models.storage.new(self)
 
+    def save(self):
+        """updates the public attribute updated_at with the current datetime"""
+        self.updated_at = datetime.now()
+        models.storage.save()
+
     def __str__(self):
-        """
-        Method returns string representation
-        """
+        """returns string with the BaseModel arguments"""
         return ("[{}] ({}) {}".format(str(type(self).__name__),
                                       self.id, str(self.__dict__)))
 
@@ -48,21 +51,13 @@ class BaseModel:
         string = ("[{}] ({}) {}".format(cls, self.id, self.__dict__))
         return (string)
 
-    def save(self):
-        """
-        Method to update attrb updated_at
-        """
-        self.updated_at = datetime.now()
-        models.storage.save()
-
     def to_dict(self):
         """
         Method to return a dict containing all key/value of __dict__
         instance
         """
-        dic = dict(**self.__dict__)
-        dic['__class__'] = str(type(self).__name__)
-        dic['created_at'] = self.created_at.isoformat()
-        dic['updated_at'] = self.updated_at.isoformat()
-
-        return (dic)
+        my_dict = dict(**self.__dict__)
+        my_dict['__class__'] = str(type(self).__name__)
+        my_dict['created_at'] = self.created_at.isoformat()
+        my_dict['updated_at'] = self.updated_at.isoformat()
+        return my_dict
