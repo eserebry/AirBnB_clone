@@ -24,8 +24,13 @@ div.container button:hover {
     opacity: 0.9;
 }
 
-div.locations,
-div.amentities {
+div.locations {
+    height: 100%;
+    width: 25%;
+    border-right: #DDDDDD solid 1px;
+}
+
+div.amenities {
     height: 100%;
     width: 25%;
 }
