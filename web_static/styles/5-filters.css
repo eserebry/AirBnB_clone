@@ -27,7 +27,7 @@ div.container button:hover {
 div.locations {
     height: 100%;
     width: 25%;
-    border-right: #DDDDDD solid 1px;
+    border-right: 1px solid #DDDDDD;
 }
 
 div.amenities {
