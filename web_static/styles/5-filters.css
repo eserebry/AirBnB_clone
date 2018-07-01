@@ -17,8 +17,7 @@ div.container button {
     border-radius: 4px;
     position: absolute;
     right: 30px;
-    top: 11px;
-    margin-bottom: 15px;
+    top: 11px;;
 }
 
 div.container button:hover {
@@ -31,6 +30,7 @@ div.locations {
     border-right: 1px solid #DDDDDD;
     display: inline-block;
     margin-left: 50px;
+    margin-bottom: 20px;
 }
 
 div.amenities {
@@ -38,6 +38,7 @@ div.amenities {
     width: 25%;
     display: inline-block;
     margin-left: 50px;
+    margin-bottom: 20px;
 }
 
 h3 {
