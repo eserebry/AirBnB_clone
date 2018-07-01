@@ -30,8 +30,7 @@ div.locations {
     border-right: 1px solid #DDDDDD;
     display: inline-block;
     margin-left: 50px;
-    margin-top: 20px;
-    line-height: 30%;
+    line-height: 20%;
 }
 
 div.amenities {
@@ -39,8 +38,7 @@ div.amenities {
     width: 25%;
     display: inline-block;
     margin-left: 50px;
-    margin-top: 20px;
-    line-height: 30%;
+    line-height: 20%;
 }
 
 h3 {
