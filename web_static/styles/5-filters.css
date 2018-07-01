@@ -18,6 +18,7 @@ div.container button {
     position: absolute;
     right: 30px;
     top: 11px;
+    margin-bottom: 15px;
 }
 
 div.container button:hover {
@@ -46,5 +47,4 @@ h3 {
 h4 {
     font-weight: 400;
     font-size: 14px;
-    padding-bottom: 20px;
 }
