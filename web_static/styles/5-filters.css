@@ -29,12 +29,16 @@ div.locations {
     width: 25%;
     border-right: 1px solid #DDDDDD;
     display: inline-block;
+    margin-left: 30px;
+    margin-bottom: 15px;
 }
 
 div.amenities {
     height: 100%;
     width: 25%;
     display: inline-block;
+    margin-left: 30px;
+    margin-bottom: 15px;
 }
 
 h3 {
