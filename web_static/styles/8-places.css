@@ -26,3 +26,35 @@ article h2 {
     font-size: 30px;
     margin: auto;
 }
+
+div.price_by_night {
+    font-color: #FF5A5F;
+    border: #FF5A5F solid 4px;
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    align-top: right;
+}
+
+div.information {
+    height: 80px;
+    border-top: #DDDDDD solid 1px;
+    border-bottom: #DDDDDD solid 1px;
+}
+
+div.max_quest {
+    width: 100px;
+}
+
+div.number_rooms {
+    width: 100px;
+}
+
+div.number_bathrooms {
+    width: 100px;
+}
+
+div.user {
+    font-weight: bold;
+}
