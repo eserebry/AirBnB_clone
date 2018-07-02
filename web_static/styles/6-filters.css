@@ -58,6 +58,10 @@ ul.popover {
     border: #DDDDDD solid 1px;
     border-radius: 4px;
     position: absolute;
+    left: 0px;
+    margin: 0;
+    top: 100%;
+    width: 20.1%;
     display: none;
 }
 
@@ -71,4 +75,8 @@ div.locations:hover ul.popover{
 
 div.amenities:hover ul.popover{
     display: block;
+}
+
+li {
+    list-style-type: none;
 }
