@@ -62,7 +62,7 @@ div.locations ul.popover {
     margin: 0;
     top: 100%;
     width: 21.8%;
-    display: 
+    display: none; 
 }
 
 div.amenities ul.popover {
@@ -74,7 +74,7 @@ div.amenities ul.popover {
     margin: 0;
     top: 100%;
     width: 25%;
-    display: 
+    display: none;
 }
 
 h2 {
