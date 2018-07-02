@@ -53,15 +53,27 @@ h4 {
     font-size: 14px;
 }
 
-ul.popover {
-    color: #FAFAFA;
+div.locations ul.popover {
+    background-color: #FAFAFA;
     border: #DDDDDD solid 1px;
     border-radius: 4px;
     position: absolute;
     left: 0px;
     margin: 0;
     top: 100%;
-    width: 20.1%;
+    width: 20.8%;
+    display: none;
+}
+
+div.amenities ul.popover {
+    background-color: #FAFAFA;
+    border: #DDDDDD solid 1px;
+    border-radius: 4px;
+    position: absolute;
+    left: 249px;
+    margin: 0;
+    top: 100%;
+    width: 20.8%;
     display: none;
 }
 
