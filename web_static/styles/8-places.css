@@ -28,33 +28,55 @@ article h2 {
 }
 
 div.price_by_night {
-    font-color: #FF5A5F;
+    color: #FF5A5F;
     border: #FF5A5F solid 4px;
     border-radius: 50%;
     min-width: 60px;
     height: 60px;
     font-size: 30px;
     align-top: right;
+    display: inline-block;
+    position: absolute;
+    transform: translate(480%, -15%)
+}
+
+div.price_by_night p {
+    transform: translate(1%, -50%)
 }
 
 div.information {
     height: 80px;
     border-top: #DDDDDD solid 1px;
     border-bottom: #DDDDDD solid 1px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 
 div.max_quest {
     width: 100px;
+    background: url(../images/max_guest.png) no-repeat;
+    display: flex;
 }
 
 div.number_rooms {
     width: 100px;
+        background: url(../images/number_rooms.png) no-repeat;
 }
 
 div.number_bathrooms {
     width: 100px;
+        background: url(../images/number_bath.png) no-repeat;
 }
 
 div.user {
     font-weight: bold;
+    display: flex;  
+    justify-content: flex-start;    
 }
+
+div.description {
+     display: flex;
+     justify-content: flex-start;
+ }
