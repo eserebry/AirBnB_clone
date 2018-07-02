@@ -19,7 +19,6 @@ section.places article {
     margin: 20px;
     border: #FF5A5F solid 1px;
     border-radius: 4px;
-    display: inline-flex;
 }
 
 article h2 {
@@ -37,11 +36,11 @@ div.price_by_night {
     align-top: right;
     display: inline-block;
     position: absolute;
-    transform: translate(480%, -15%)
+    transform: translate(480%, -110%)
 }
 
 div.price_by_night p {
-    transform: translate(1%, -50%)
+    transform: translate(5%, -55%)
 }
 
 div.information {
@@ -57,17 +56,16 @@ div.information {
 div.max_quest {
     width: 100px;
     background: url(../images/max_guest.png) no-repeat;
-    display: flex;
 }
 
 div.number_rooms {
     width: 100px;
-        background: url(../images/number_rooms.png) no-repeat;
+    background: url(../images/number_rooms.png) no-repeat;
 }
 
 div.number_bathrooms {
     width: 100px;
-        background: url(../images/number_bath.png) no-repeat;
+    background: url(../images/number_bath.png) no-repeat;
 }
 
 div.user {
