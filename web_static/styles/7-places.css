@@ -1,2 +1,18 @@
-places {
+places h1 {
+    top-aligh: left;
+    fomt-size: 30px;
+}
+
+places article {
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: #FF5A5F solid 1px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+places article.h2 {
+    font-soze: 30px;
+    margin: auto;
 }
